@@ -1,0 +1,121 @@
+$background : #b7d4a8;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 360px;
+    height: 420px;
+    border:solid black 10px;
+    border-radius: 10px;
+    margin: 100px auto;
+    background-color: $background;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position:relative;
+    &>#scoreBoard{
+        width: 360px;
+        font:bold 20px Courier New;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        &>span{
+            display:inline-block;
+        }
+    }
+
+    &>#gameWindow{
+        width: 304px;
+        height:304px;
+        margin:0px 28px;
+        border:solid black 2px;
+        position:relative;
+        #snake>div{
+            width:10px;
+            height:10px;
+            background-color: black;
+            border:solid $background 1px;
+            position:absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #food{
+            position:absolute;
+            top:100px;
+            left: 100px;
+            width:10px;
+            height:10px;
+            display:flex;
+            flex-wrap: wrap;
+            & >div{
+                width:3px;
+                height:3px;
+                margin: 1px;
+                background-color:black;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &>#informBoard{
+        position:absolute;
+        width:100%;
+        height:100%;
+        background-color:rgba(255,255,255,0.8);
+        & #startBoard{
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            &>h1{
+                padding:50px 0;
+            }
+        }
+        & #startBoard.hidden{
+            display:none;
+        } 
+
+        & #finishBoard{
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            &>h1{
+                padding:50px 0;
+            } 
+
+            & #statusWrapper{
+                display:flex;
+                flex-direction:column;
+                & >span{
+                    display:inline-block;
+                    padding:10px;
+                    width:100%;
+                }
+            }
+
+            & #scoreWrapper{
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        &.hidden{
+            display:none;
+        }
+    }
+}
+
+.hidden{
+    display:none;
+}
